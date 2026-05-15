@@ -118,10 +118,9 @@ plot(temperature_model)
 #| label: temperature-model-summary
 # creating summary of temperature_model data
 summary(temperature_model)
-
 ```
 
-For each meter of elevation gain, you would expect a decrease in temperature equivalent to 0.01 $\pm$ 0.0003 (SE) °C.
+For each meter of elevation gain, you would expect a decrease in temperature equivalent to 0.006 $\pm$ 0.0003 (SE) °C.
 
 ### Generating predictions
 
@@ -137,7 +136,8 @@ temperature_preds <- ggpredict(
 # calculate the temperature prediction at elevation = 900
 ggpredict(
   temperature_model,           # model object
-  terms = "elevation_m[900]"   # predictor (in quotation marks) and predictor value in brackets
+  terms = "elevation_m[900]"   # predictor (in quotation marks)
+                               # predictor value in brackets
 )
 ```
 
@@ -170,6 +170,7 @@ ggplot(data = sonadora_sum,
   # axis labels
   labs(x = "Elevation (m)",
        y = "Mean temperature (\U00B0 C)") +
+  # adding theme
   theme_bw()
 ```
 
@@ -177,7 +178,7 @@ ggplot(data = sonadora_sum,
 
 ```{r}
 #| label: temperature-model-table
-
+# creating flextable
 as_flextable(temperature_model)
 ```
 
