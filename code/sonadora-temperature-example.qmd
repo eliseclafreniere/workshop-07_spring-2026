@@ -1,9 +1,9 @@
 ---
 title: "Linear regression: Sonadora temperature and elevation example"
-author: "your name here"
-date: "insert date here"
+author: "Elise LaFreniere"
+date: "05-15-2026"
 format:
-  html:
+  pdf:
     toc: true # use this to display a table of contents
 execute:
   message: false # use this to make sure messages don't show up
@@ -82,7 +82,9 @@ ggplot(data = sonadora_sum,
        aes(x = elevation_m,
            y = mean_temp_c)) +
   # first layer: points representing temperature at each elevation
-  geom_point()
+  geom_point() +
+  # adding theme 
+  theme_minimal()
 
 ```
 
@@ -114,12 +116,12 @@ plot(temperature_model)
 
 ```{r}
 #| label: temperature-model-summary
-
+# creating summary of temperature_model data
 summary(temperature_model)
 
 ```
 
-**For each meter of elevation gain, you would expect a decrease in temperature equivalent to 0.01 ± 0.0003 (SE) °C.**
+For each meter of elevation gain, you would expect a decrease in temperature equivalent to 0.01 $\pm$ 0.0003 (SE) °C.
 
 ### Generating predictions
 
